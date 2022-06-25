@@ -8,16 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GildedRoseTest {
 
-    private static final String ITEM_GENERIC = "Generic item";
-    private static final String ITEM_AGED_BRIE = "Aged Brie";
-    private static final String ITEM_BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
-    private static final String ITEM_SULFURAS = "Sulfuras, Hand of Ragnaros";
-
     @ParameterizedTest
     @CsvSource({
-        ITEM_GENERIC + ", 1, 1",
-        ITEM_AGED_BRIE + ", 1, 1",
-        ITEM_BACKSTAGE_PASSES + ", 1, 1",
+        ItemName.Constants.GENERIC_VALUE + ", 1, 1",
+        ItemName.Constants.AGED_BRIE_VALUE + ", 1, 1",
+        ItemName.Constants.BACKSTAGE_PASSES_VALUE + ", 1, 1",
     })
     void itemsSellInDecreasesByOne(String name, int sellIn, int quality) {
         GildedRose gildedRose = createGildedRose(name, sellIn, quality);
@@ -29,7 +24,7 @@ class GildedRoseTest {
 
     @Test
     void itemSulfurasSellInDoesNotChange() {
-        GildedRose gildedRose = createGildedRose(ITEM_SULFURAS, 1, 1);
+        GildedRose gildedRose = createGildedRose(ItemName.Constants.SULFURAS_VALUE, 1, 1);
 
         gildedRose.updateQuality();
 
@@ -38,9 +33,9 @@ class GildedRoseTest {
 
     @ParameterizedTest
     @CsvSource({
-        ITEM_GENERIC + ", 1, 0",
-        ITEM_AGED_BRIE + ", 1, 0",
-        ITEM_BACKSTAGE_PASSES + ", 1, 0",
+        ItemName.Constants.GENERIC_VALUE + ", 1, 0",
+        ItemName.Constants.AGED_BRIE_VALUE + ", 1, 0",
+        ItemName.Constants.BACKSTAGE_PASSES_VALUE + ", 1, 0",
     })
     void itemsQualityIsNeverNegative(String name, int sellIn, int quality) {
         GildedRose gildedRose = createGildedRose(name, sellIn, quality);
@@ -52,8 +47,8 @@ class GildedRoseTest {
 
     @ParameterizedTest
     @CsvSource({
-        ITEM_AGED_BRIE + ", 1, 50",
-        ITEM_BACKSTAGE_PASSES + ", 1, 50",
+        ItemName.Constants.AGED_BRIE_VALUE + ", 1, 50",
+        ItemName.Constants.BACKSTAGE_PASSES_VALUE + ", 1, 50",
     })
     void itemsQualityIsNeverMoreThanFifty(String name, int sellIn, int quality) {
         GildedRose gildedRose = createGildedRose(name, sellIn, quality);
@@ -65,7 +60,7 @@ class GildedRoseTest {
 
     @Test
     void itemGenericQualityDecreasesByOneIfSellInIsAboveZero() {
-        GildedRose gildedRose = createGildedRose(ITEM_GENERIC, 1, 1);
+        GildedRose gildedRose = createGildedRose(ItemName.Constants.GENERIC_VALUE, 1, 1);
 
         gildedRose.updateQuality();
 
@@ -74,7 +69,7 @@ class GildedRoseTest {
 
     @Test
     void itemGenericQualityDecreasesByTwoOnceSellInHasPassed() {
-        GildedRose gildedRose = createGildedRose(ITEM_GENERIC, 0, 2);
+        GildedRose gildedRose = createGildedRose(ItemName.Constants.GENERIC_VALUE, 0, 2);
 
         gildedRose.updateQuality();
 
@@ -83,7 +78,7 @@ class GildedRoseTest {
 
     @Test
     void itemAgedBrieQualityIncreasesByOne() {
-        GildedRose gildedRose = createGildedRose(ITEM_AGED_BRIE, 1, 1);
+        GildedRose gildedRose = createGildedRose(ItemName.Constants.AGED_BRIE_VALUE, 1, 1);
 
         gildedRose.updateQuality();
 
@@ -92,7 +87,7 @@ class GildedRoseTest {
 
     @Test
     void itemBackstagePassesQualityIncreasesByOneIfSellInMoreThanEleven() {
-        GildedRose gildedRose = createGildedRose(ITEM_BACKSTAGE_PASSES, 12, 1);
+        GildedRose gildedRose = createGildedRose(ItemName.Constants.BACKSTAGE_PASSES_VALUE, 12, 1);
 
         gildedRose.updateQuality();
 
@@ -101,7 +96,7 @@ class GildedRoseTest {
 
     @Test
     void itemBackstagePassesQualityIncreasesByTwoIfSellInLessThanEleven() {
-        GildedRose gildedRose = createGildedRose(ITEM_BACKSTAGE_PASSES, 10, 1);
+        GildedRose gildedRose = createGildedRose(ItemName.Constants.BACKSTAGE_PASSES_VALUE, 10, 1);
 
         gildedRose.updateQuality();
 
@@ -110,7 +105,7 @@ class GildedRoseTest {
 
     @Test
     void itemBackstagePassesQualityIncreasesByThreeIfSellInLessThanSix() {
-        GildedRose gildedRose = createGildedRose(ITEM_BACKSTAGE_PASSES, 5, 1);
+        GildedRose gildedRose = createGildedRose(ItemName.Constants.BACKSTAGE_PASSES_VALUE, 5, 1);
 
         gildedRose.updateQuality();
 
@@ -119,7 +114,7 @@ class GildedRoseTest {
 
     @Test
     void itemBackstagePassesQualityIsZeroIfSellInHasPassed() {
-        GildedRose gildedRose = createGildedRose(ITEM_BACKSTAGE_PASSES, 0, 20);
+        GildedRose gildedRose = createGildedRose(ItemName.Constants.BACKSTAGE_PASSES_VALUE, 0, 20);
 
         gildedRose.updateQuality();
 
@@ -128,7 +123,7 @@ class GildedRoseTest {
 
     @Test
     void itemSulfurasQualityDoesNotChange() {
-        GildedRose gildedRose = createGildedRose(ITEM_SULFURAS, 1, 1);
+        GildedRose gildedRose = createGildedRose(ItemName.Constants.SULFURAS_VALUE, 1, 1);
 
         gildedRose.updateQuality();
 
