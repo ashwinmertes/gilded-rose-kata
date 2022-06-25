@@ -2,10 +2,10 @@ package com.gildedrose;
 
 public enum ItemName {
 
-    GENERIC(Constants.GENERIC_VALUE),
-    AGED_BRIE(Constants.AGED_BRIE_VALUE),
-    BACKSTAGE_PASSES(Constants.BACKSTAGE_PASSES_VALUE),
-    SULFURAS(Constants.SULFURAS_VALUE);
+    GENERIC(Constants.GENERIC),
+    AGED_BRIE(Constants.AGED_BRIE),
+    BACKSTAGE_PASSES(Constants.BACKSTAGE_PASSES),
+    SULFURAS(Constants.SULFURAS);
 
     private final String name;
 
@@ -23,10 +23,10 @@ public enum ItemName {
             throw new UnsupportedOperationException();
         }
 
-        public static final String GENERIC_VALUE = "Generic item";
-        public static final String AGED_BRIE_VALUE = "Aged Brie";
-        public static final String BACKSTAGE_PASSES_VALUE = "Backstage passes to a TAFKAL80ETC concert";
-        public static final String SULFURAS_VALUE = "Sulfuras, Hand of Ragnaros";
+        public static final String GENERIC = "Generic item";
+        public static final String AGED_BRIE = "Aged Brie";
+        public static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
+        public static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
     }
 
 }
