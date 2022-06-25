@@ -14,7 +14,6 @@ public class BackstagePasses implements UpdatableItem {
     @Override
     public void update() {
         item.sellIn -= 1;
-
         increaseQualityByOne(item);
 
         if (item.sellIn < 10) {
