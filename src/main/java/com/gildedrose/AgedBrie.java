@@ -1,14 +1,9 @@
 package com.gildedrose;
 
-import lombok.RequiredArgsConstructor;
-
 import static com.gildedrose.ItemUtils.MINIMUM_ALLOWED_QUALITY;
 import static com.gildedrose.ItemUtils.increaseQualityByOne;
 
-@RequiredArgsConstructor
-public class AgedBrie implements UpdatableItem {
-
-    private final Item item;
+public record AgedBrie(Item item) implements UpdatableItem {
 
     @Override
     public void update() {

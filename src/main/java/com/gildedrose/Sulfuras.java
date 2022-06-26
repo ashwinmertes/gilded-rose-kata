@@ -1,4 +1,4 @@
 package com.gildedrose;
 
-public class Sulfuras implements UpdatableItem {
+public record Sulfuras() implements UpdatableItem {
 }
