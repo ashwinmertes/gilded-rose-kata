@@ -18,7 +18,7 @@ public record BackstagePasses(Item item) implements UpdatableItem {
             increaseQualityByOne(item);
         }
 
-        if (item.sellIn < MINIMUM_ALLOWED_QUALITY) {
+        if (item.sellIn < 0) {
             item.quality = MINIMUM_ALLOWED_QUALITY;
         }
     }
