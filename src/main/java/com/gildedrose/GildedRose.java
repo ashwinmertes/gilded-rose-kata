@@ -1,16 +1,14 @@
 package com.gildedrose;
 
+import lombok.AllArgsConstructor;
+
 import java.util.Arrays;
 
+@AllArgsConstructor
 class GildedRose {
 
     Item[] items;
     ItemFactory itemFactory;
-
-    public GildedRose(Item[] items, ItemFactory itemFactory) {
-        this.items = items;
-        this.itemFactory = itemFactory;
-    }
 
     public void update() {
         Arrays.stream(items).forEach(item -> {

@@ -1,5 +1,10 @@
 package com.gildedrose;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Getter
 public enum ItemName {
 
     GENERIC(Constants.GENERIC),
@@ -8,14 +13,6 @@ public enum ItemName {
     SULFURAS(Constants.SULFURAS);
 
     private final String name;
-
-    ItemName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     public static class Constants {
 
