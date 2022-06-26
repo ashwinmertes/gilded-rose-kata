@@ -7,6 +7,7 @@ public class ItemFactory {
             case ItemName.Constants.AGED_BRIE -> new AgedBrie(item);
             case ItemName.Constants.BACKSTAGE_PASSES -> new BackstagePasses(item);
             case ItemName.Constants.SULFURAS -> new Sulfuras(item);
+            case ItemName.Constants.CONJURED -> new Conjured(item);
             default -> new GenericItem(item);
         };
     }

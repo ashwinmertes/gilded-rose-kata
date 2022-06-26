@@ -1,17 +1,26 @@
 package com.gildedrose;
 
-import static com.gildedrose.ItemUtils.decreaseQualityByOne;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-public record GenericItem(Item item) implements UpdatableItem {
+@RequiredArgsConstructor
+@Getter
+public class GenericItem implements UpdatableItem {
+
+    private final Item item;
 
     @Override
     public void update() {
         item.sellIn -= 1;
-        decreaseQualityByOne(item);
+        decreaseQuality(item);
 
         if (item.sellIn < 0) {
-            decreaseQualityByOne(item);
+            decreaseQuality(item);
         }
+    }
+
+    public void decreaseQuality(Item item) {
+        ItemUtils.decreaseQuality(item, 1);
     }
 
 }

@@ -15,7 +15,7 @@ class GenericItemTest {
 
         genericItem.update();
 
-        assertEquals(0, genericItem.item().sellIn);
+        assertEquals(0, genericItem.getItem().sellIn);
     }
 
     @ParameterizedTest
@@ -31,7 +31,7 @@ class GenericItemTest {
 
         genericItem.update();
 
-        assertEquals(exceptedQuality, genericItem.item().quality);
+        assertEquals(exceptedQuality, genericItem.getItem().quality);
     }
 
 }

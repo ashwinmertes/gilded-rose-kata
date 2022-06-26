@@ -10,7 +10,8 @@ public enum ItemName {
     GENERIC(Constants.GENERIC),
     AGED_BRIE(Constants.AGED_BRIE),
     BACKSTAGE_PASSES(Constants.BACKSTAGE_PASSES),
-    SULFURAS(Constants.SULFURAS);
+    SULFURAS(Constants.SULFURAS),
+    CONJURED(Constants.CONJURED);
 
     private final String name;
 
@@ -24,6 +25,7 @@ public enum ItemName {
         public static final String AGED_BRIE = "Aged Brie";
         public static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
         public static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+        public static final String CONJURED = "Conjured";
     }
 
 }

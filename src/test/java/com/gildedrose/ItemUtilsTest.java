@@ -10,7 +10,7 @@ class ItemUtilsTest {
     void decreaseQualityByOneIfQualityIsAboveZero() {
         Item item = new Item(ItemName.GENERIC.getName(), 1, 1);
 
-        ItemUtils.decreaseQualityByOne(item);
+        ItemUtils.decreaseQuality(item, 1);
 
         assertEquals(0, item.quality);
     }
@@ -19,7 +19,7 @@ class ItemUtilsTest {
     void qualityDoesNotDecreasesByOneIfQualityIsBelowZero() {
         Item item = new Item(ItemName.GENERIC.getName(), 1, -1);
 
-        ItemUtils.decreaseQualityByOne(item);
+        ItemUtils.decreaseQuality(item, 1);
 
         assertEquals(-1, item.quality);
     }
@@ -28,7 +28,7 @@ class ItemUtilsTest {
     void increaseQualityByOneIfQualityIsBelowFifty() {
         Item item = new Item(ItemName.GENERIC.getName(), 1, 1);
 
-        ItemUtils.increaseQualityByOne(item);
+        ItemUtils.increaseQuality(item, 1);
 
         assertEquals(2, item.quality);
     }
@@ -37,7 +37,7 @@ class ItemUtilsTest {
     void qualityDoesNotIncreasesByOneIfQualityIsAboveFifity() {
         Item item = new Item(ItemName.GENERIC.getName(), 1, 51);
 
-        ItemUtils.increaseQualityByOne(item);
+        ItemUtils.increaseQuality(item, 1);
 
         assertEquals(51, item.quality);
     }

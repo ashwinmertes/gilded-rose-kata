@@ -50,4 +50,13 @@ class ItemFactoryTest {
         assertInstanceOf(Sulfuras.class, updatableItem);
     }
 
+    @Test
+    void conjuredItemNameReturnsConjuredItemObject() {
+        Item item = new Item(ItemName.Constants.CONJURED, 1, 1);
+
+        UpdatableItem updatableItem = itemFactory.createUpdatableItem(item);
+
+        assertInstanceOf(Conjured.class, updatableItem);
+    }
+
 }
