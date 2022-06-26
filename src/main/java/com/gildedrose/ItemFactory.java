@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.items.*;
+
 public class ItemFactory {
 
     public UpdatableItem createUpdatableItem(Item item) {

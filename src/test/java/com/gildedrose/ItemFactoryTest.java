@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import com.gildedrose.items.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

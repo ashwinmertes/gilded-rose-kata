@@ -1,4 +1,7 @@
-package com.gildedrose;
+package com.gildedrose.items;
+
+import com.gildedrose.Item;
+import com.gildedrose.UpdatableItem;
 
 import static com.gildedrose.ItemUtils.increaseQuality;
 

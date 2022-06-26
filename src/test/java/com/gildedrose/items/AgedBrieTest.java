@@ -1,5 +1,8 @@
-package com.gildedrose;
+package com.gildedrose.items;
 
+import com.gildedrose.Item;
+import com.gildedrose.ItemName;
+import com.gildedrose.items.AgedBrie;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
