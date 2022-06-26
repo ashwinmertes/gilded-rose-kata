@@ -22,7 +22,7 @@ public class GenericItem implements UpdatableItem {
         }
     }
 
-    public void decreaseQuality(Item item) {
+    protected void decreaseQuality(Item item) {
         ItemUtils.decreaseQuality(item, 1);
     }
 
